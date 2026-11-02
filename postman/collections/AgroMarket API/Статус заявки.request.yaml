@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/orders/{{orderId}}"
+method: PATCH
+body:
+  type: json
+  content: '{"status":"processing"}'
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 200', () => {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 9000

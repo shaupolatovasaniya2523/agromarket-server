@@ -1,0 +1,14 @@
+$kind: collection
+variables:
+  baseUrl: ""
+  productId: ""
+  orderId: ""
+  adminEmail: ""
+  adminPassword: ""
+  token: ""
+auth:
+  - id: c14de094-ea9c-4ea2-aae5-15d90d99aa1a
+    type: bearer
+    name: Bearer Token
+    credentials:
+      token: "{{token}}"

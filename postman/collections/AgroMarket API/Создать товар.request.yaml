@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{baseUrl}}/products"
+method: POST
+body:
+  type: json
+  content: '{"name":"Тест","price":100}'
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 201', () => {\r
+
+      \  pm.response.to.have.status(201);\r
+
+      });\r
+
+      \ \r
+
+      pm.test('В ответе есть id и переданное имя', () => {\r
+
+      \  const body = pm.response.json();\r
+
+      \  pm.expect(body.id).to.be.a('number');\r
+
+      \  pm.expect(body.name).to.eql('Тест');\r
+
+      });\r
+
+      \ \r
+
+      // Запоминаем id — его используют запросы 4, 5, 10, 11\r
+
+      pm.collectionVariables.set('productId', pm.response.json().id);\r\n"
+    language: text/javascript
+order: 3000

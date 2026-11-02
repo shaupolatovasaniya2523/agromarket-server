@@ -1,0 +1,8 @@
+{
+    "products": [
+        { "id": 1, "name": "Книга", "price": 12, "image": "https://www.svgrepo.com/show/313583/book-solid.svg" },
+        { "id": 2, "name": "Новая книга", "price": 23, "image": "https://www.svgrepo.com/show/171379/jar.svg" },
+        { "id": 3, "name": "Другая книга", "price": 7123, "image": "https://www.svgrepo.com/show/313583/book-solid.svg" },
+        { "id": 4, "name": "Ещё книга", "price": 1344, "image": "https://www.svgrepo.com/show/313583/book-solid.svg" }
+    ]
+}

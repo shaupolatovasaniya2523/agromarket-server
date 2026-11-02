@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/products/{{productId}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 404', () => {\r
+
+      \  pm.response.to.have.status(404);\r
+
+      });\r\n"
+    language: text/javascript
+order: 11000

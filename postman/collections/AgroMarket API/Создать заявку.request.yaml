@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/orders"
+method: POST
+body:
+  type: json
+  content: '{"name":"Тест","email":"t@t.kz","quantity":20}'
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 201', () => {\r
+
+      \  pm.response.to.have.status(201);\r
+
+      });\r\n"
+    language: text/javascript
+order: 7000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/products?search=мол"
+method: GET
+queryParams:
+  search: мол
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 200', () => {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 2000

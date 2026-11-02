@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/products/{{productId}}"
+method: GET
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 200', () => {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 4000

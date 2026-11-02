@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/products/{{productId}}"
+method: DELETE
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test('Статус 204', () => {\r
+
+      \  pm.response.to.have.status(204);\r
+
+      });\r\n"
+    language: text/javascript
+order: 10000
