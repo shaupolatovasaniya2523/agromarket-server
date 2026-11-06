@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS users;          
+DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS users CASCADE;          
 
 CREATE TABLE users (                 -- ← НОВОЕ
   id            SERIAL PRIMARY KEY,
